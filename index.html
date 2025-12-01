@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cantinho Doce - Confeitaria Artesanal</title>
+    <meta name="description"
+        content="Cantinho Doce: Encomende bolos artesanais, decorados e de chocolate. Escolha sua massa e recheio (Ninho, Doce de Leite e mais). Pedidos fáceis via WhatsApp." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+    <button id="open-cart-btn"
+        class="btn-acento text-3xl p-3 shadow-xl fixed top-6 right-6 z-[100] transition-opacity duration-300">
+        <i class="fas fa-shopping-basket mr-2"></i>
+        <span id="cart-count">0</span>
+    </button>
+
+    <div id="error-modal"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 transition-opacity duration-300">
+        <div class="bg-white p-6 rounded-2xl sombra-doce max-w-sm mx-4 text-center border-4 border-red-400">
+            <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-3"></i>
+            <h3 class="font-titulo text-3xl text-red-600 mb-2">Atenção!</h3>
+            <p class="font-corpo text-lg">O número do WhatsApp precisa ser configurado no código-fonte (variável
+                WHATSAPP_NUMBER) para o checkout funcionar.</p>
+            <button id="close-error-modal-btn" class="mt-4 btn-acento text-sm">Entendi</button>
+        </div>
+    </div>
+
+    <header class="header-doce">
+        <div id="c1" class="confeti"></div>
+        <div id="c2" class="confeti"></div>
+        <div id="c3" class="confeti"></div>
+        <div id="c4" class="confeti"></div>
+        <div class="container mx-auto px-4 py-8 flex justify-between items-center">
+            <div class="text-white text-center w-full">
+                <i class="fas fa-heart text-4xl mb-1 text-white/90"></i>
+                <h1 class="font-titulo text-8xl md:text-9xl tracking-wider text-shadow-lg drop-shadow-lg" style="padding-bottom: 40px;">Cantinho Doce
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <section id="sobre"
+            class="bg-white p-8 md:p-12 -mt-10 mb-12 rounded-[40px] sombra-doce border-8 border-pink-100">
+            <h2 class="font-titulo text-6xl text-center text-gray-800 mb-4">A Doçura do Artesanato</h2>
+            <p class="font-corpo text-center text-xl md:text-2xl max-w-3xl mx-auto">
+                No Cantinho Doce, cada bolo é feito com ingredientes selecionados e muito carinho.
+                Nossa confeitaria é uma ode ao sabor caseiro, onde a delicadeza do glacê encontra o conforto de uma
+                receita de vó. Encomende sua felicidade!
+            </p>
+        </section>
+
+        <section id="cardapio-visual" class="mb-16">
+            <h2 class="font-titulo text-6xl text-center text-gray-800 mb-8">Cardápio Completo (Massas e Recheios)</h2>
+            <div
+                class="card-imagem-cardapio p-6 bg-pink-50 rounded-[40px] sombra-doce border-4 border-pink-200 mx-auto">
+                <img src="images/WhatsApp Image 2025-11-30 at 15.55.01.jpeg"
+                    alt="Imagem completa do cardápio" class="w-full h-full object-contain rounded-3xl sombra-doce">
+            </div>
+        </section>
+
+        <section id="bolos" class="mb-16">
+            <h2 class="font-titulo text-6xl text-center text-gray-800 mb-12">Bolos e Docinhos (Layout em Grade)</h2>
+            <div id="product-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            </div>
+        </section>
+
+        <section id="outros-doces" class="mb-16">
+            <h2 class="font-titulo text-6xl text-center text-gray-800 mb-12">Outras Delícias do Cantinho!</h2>
+            <div class="carousel-container relative w-full max-w-4xl mx-auto">
+                <button
+                    class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2 bg-pink-400 text-white p-3 rounded-full shadow-lg z-10 hover:bg-pink-500 transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div id="carousel-items-container"
+                    class="carousel-items flex overflow-x-auto snap-x snap-mandatory scroll-smooth p-2 no-scrollbar">
+                </div>
+                <button
+                    class="carousel-next absolute right-0 top-1/2 -translate-y-1/2 bg-pink-400 text-white p-3 rounded-full shadow-lg z-10 hover:bg-pink-500 transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-12 pt-8 pb-4">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="font-titulo text-5xl mb-3">Cantinho Doce</h3>
+            <p class="font-corpo text-xl mb-4">Siga-nos nas redes sociais e venha adoçar sua vida!</p>
+            <div class="flex justify-center space-x-6 text-2xl mb-6">
+                <a href="https://www.instagram.com/cantinhodocee01/" class="hover:text-pink-300 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/558781583215" class="hover:text-pink-300 transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="font-corpo text-sm text-gray-400 border-t border-gray-700 pt-4 mt-4">© 2025 Cantinho Doce. Todos
+                os direitos reservados. Design Artesanal.</p>
+        </div>
+    </footer>
+
+    <div id="cart-backdrop" class="fixed inset-0 bg-black bg-opacity-30 z-40 transition-opacity duration-400 hidden">
+    </div>
+
+    <aside id="cart-sidebar"
+        class="carrinho-sidebar fixed top-0 right-0 w-full max-w-xs md:max-w-sm z-50 shadow-2xl transform translate-x-full 
+        
+        /* CLASSES CRUCIAIS DE FLEXBOX: h-full, flex, flex-col */
+        h-full 
+        flex 
+        flex-col 
+        transition-transform duration-500">
+
+        <div id="cart-header-fixed" class="p-6 border-b-4 border-pink-300 flex justify-between items-center flex-shrink-0">
+            <h2 class="font-titulo text-5xl">Seu Pedido</h2>
+            <button id="close-cart-btn-icon" class="text-3xl hover:text-pink-500 transition">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-wrapper" class="px-6 py-4 flex-grow overflow-y-auto min-h-0">
+            <div id="cart-items" class="space-y-4">
+                </div>
+        </div>
+
+        <div id="cart-footer-fixed" class="p-6 border-t-4 border-pink-300 flex-shrink-0">
+            
+            <div class="mb-4 bg-white p-3 rounded-xl shadow-inner border-2 border-pink-200">
+                <label for="client-name-input" class="font-corpo text-2xl font-bold">Seu Nome:</label>
+                <input type="text" id="client-name-input" placeholder="Digite seu nome (Obrigatório)"
+                    class="w-full mt-1 p-1 bg-white border-b-2 border-pink-300 focus:outline-none focus:border-cor-acento font-corpo text-xl"
+                    required>
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-corpo text-3xl font-bold">Total:</span>
+                <span id="cart-total" class="font-corpo text-4xl font-extrabold text-cor-acento">R$ 0,00</span>
+            </div>
+            <button id="checkout-button"
+                class="btn-acento w-full text-2xl py-3 font-corpo disabled:bg-pink-300 disabled:shadow-none" disabled>
+                <i class="fab fa-whatsapp mr-2"></i>
+                Fechar Pedido (WhatsApp)
+            </button>
+        </div>
+    </aside>
+    <script src="scripts/index.js" type="module"></script>
+</body>
+<div id="loader-overlay">
+    <div class="loader"></div>
+</div>
+
+</html>
