@@ -58,7 +58,7 @@ const products = [
     { id: 403, name: "Mini Vulcão", desc: "Bolo individual recheado.", price: 3.50, category: "sobremesas-especiais", type: "sobremesa", image: "images/vulcao.png" },
     { id: 404, name: "Bolo no Pote", desc: "Sabores variados.", price: 15.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pote.png" },
     { id: 405, name: "Pudin", desc: "Pudim de textura suave e aveludada, com o sabor inconfundível do caramelo.", price: 22.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pudim.jpeg" },
-    { id: 406, name: "Mousses", desc: "Diversos sabores, individual.", price: 22.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/Mousse.jpeg" },
+    { id: 406, name: "Mousses", desc: "Diversos sabores, individual.", price: 22.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/mousse.jpeg" },
 ];
 
 
