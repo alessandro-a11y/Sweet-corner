@@ -53,9 +53,9 @@ const products = [
     { id: 303, name: "Pavê de Oreo", desc: "O favorito, na sua melhor versão. (Apenas venda em Kit de 10+)", price: 3.50, category: "docinhos-classicos", type: "doce", image: "images/oreo.jpeg" },
     { id: 304, name: "Bem-casado", desc: "Doce delicado e tradicional.", price: 4.00, category: "docinhos-classicos", type: "doce", image: "images/bem-casado.jpeg" },
 
-    { id: 401, name: "Taça Doce", desc: "Sabor a consultar. Individual.", price: 20.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/ta.png" },
-    { id: 402, name: "Pavê", desc: "Muito bom.", price: 70.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pave.png" },
-    { id: 403, name: "Mini Vulcão", desc: "Bolo individual recheado.", price: 3.50, category: "sobremesas-especiais", type: "sobremesa", image: "images/vulcao.png" },
+    { id: 401, name: "Taça Doce", desc: "Combinação de camadas cremosas e pedaços de bolo na taça. Sabor do dia sob consulta. Porção individual.", price: 20.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/ta.png" },
+    { id: 402, name: "Pavê", desc: "Leve, cremoso e delicioso! Camadas de biscoito intercaladas com um creme aveludado, com a doçura na medida certa.", price: 70.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pave.png" },
+    { id: 403, name: "Mini Vulcão", desc: "Mini bolo fofo com recheio cremoso transbordando, no formato vulcão. Porção individual.", price: 3.50, category: "sobremesas-especiais", type: "sobremesa", image: "images/vulcao.png" },
     { id: 404, name: "Bolo no Pote", desc: "Sabores variados.", price: 15.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pote.png" },
     { id: 405, name: "Pudin", desc: "Pudim de textura suave e aveludada, com o sabor inconfundível do caramelo.", price: 22.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pudim.jpeg" },
     { id: 406, name: "Mousses", desc: "Diversos sabores, individual.", price: 22.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/mousse.jpeg" },
