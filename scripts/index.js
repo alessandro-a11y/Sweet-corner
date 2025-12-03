@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "558781583215"; // Coloque aqui o número real, mas como string!
+const WHATSAPP_NUMBER = "558781583215"; // Coloque aqui o número real, mas como string!
 
 let cart = [];
 
