@@ -1,4 +1,4 @@
-import { WHATSAPP_NUMBER } from "./number.js";
+export const WHATSAPP_NUMBER = "558781583215"; // Coloque aqui o número real, mas como string!
 
 let cart = [];
 
