@@ -41,12 +41,31 @@
         <div class="container mx-auto px-4 py-8 flex justify-between items-center">
             <div class="text-white text-center w-full">
                 <i class="fas fa-heart text-4xl mb-1 text-white/90"></i>
-                <h1 class="font-titulo text-8xl md:text-9xl tracking-wider text-shadow-lg drop-shadow-lg" style="padding-bottom: 40px;">Cantinho Doce
+                <h1 class="font-titulo text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider text-shadow-lg drop-shadow-lg" style="padding-bottom: 40px;">Cantinho Doce
                 </h1>
             </div>
         </div>
     </header>
 
+    <nav id="menu-filtros-fixo"
+        class="md:hidden sticky top-0 z-30 w-full shadow-lg bg-white/95 backdrop-blur-sm py-2 overflow-x-auto no-scrollbar"
+        style="border-bottom: 2px solid var(--cor-principal);">
+        <div class="flex space-x-4 px-4">
+            <a href="#bolos-1-andar" class="btn-filtro-menu flex-shrink-0 text-sm font-bold rounded-full px-3 py-1.5 transition-colors duration-200"
+                style="background-color: var(--cor-acento); color: white;">
+                Bolos 1 Andar 🎂
+            </a>
+            <a href="#bolos-2-andares" class="btn-filtro-menu flex-shrink-0 text-sm font-medium text-gray-700 rounded-full px-3 py-1.5 transition-colors duration-200 hover:bg-pink-100">
+                Bolos de Andares 🎉
+            </a>
+            <a href="#docinhos-classicos" class="btn-filtro-menu flex-shrink-0 text-sm font-medium text-gray-700 rounded-full px-3 py-1.5 transition-colors duration-200 hover:bg-pink-100">
+                Docinhos 🍬
+            </a>
+            <a href="#sobremesas-especiais" class="btn-filtro-menu flex-shrink-0 text-sm font-medium text-gray-700 rounded-full px-3 py-1.5 transition-colors duration-200 hover:bg-pink-100">
+                Sobremesas 🍮
+            </a>
+        </div>
+    </nav>
     <main class="container mx-auto px-4 py-12">
         <section id="sobre"
             class="bg-white p-8 md:p-12 -mt-10 mb-12 rounded-[40px] sombra-doce border-8 border-pink-100">
@@ -61,34 +80,14 @@
         <section id="cardapio-visual" class="mb-16">
             <h2 class="font-titulo text-6xl text-center text-gray-800 mb-8">Cardápio Completo (Massas e Recheios)</h2>
             <div
-                class="card-imagem-cardapio p-6 bg-pink-50 rounded-[40px] sombra-doce border-4 border-pink-200 mx-auto">
+                class="card-imagem-cardapio p-6 bg-pink-50 rounded-[40px] sombra-doce border-4 border-pink-200 mx-auto max-w-xl">
                 <img src="images/WhatsApp Image 2025-11-30 at 15.55.01.jpeg"
                     alt="Imagem completa do cardápio" class="w-full h-full object-contain rounded-3xl sombra-doce">
             </div>
         </section>
 
-        <section id="bolos" class="mb-16">
-            <h2 class="font-titulo text-6xl text-center text-gray-800 mb-12">Bolos e Docinhos (Layout em Grade)</h2>
-            <div id="product-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            </div>
-        </section>
-
-        <section id="outros-doces" class="mb-16">
-            <h2 class="font-titulo text-6xl text-center text-gray-800 mb-12">Outras Delícias do Cantinho!</h2>
-            <div class="carousel-container relative w-full max-w-4xl mx-auto">
-                <button
-                    class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2 bg-pink-400 text-white p-3 rounded-full shadow-lg z-10 hover:bg-pink-500 transition-colors">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div id="carousel-items-container"
-                    class="carousel-items flex overflow-x-auto snap-x snap-mandatory scroll-smooth p-2 no-scrollbar">
-                </div>
-                <button
-                    class="carousel-next absolute right-0 top-1/2 -translate-y-1/2 bg-pink-400 text-white p-3 rounded-full shadow-lg z-10 hover:bg-pink-500 transition-colors">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
+        <div id="products-master-container">
+        </div>
 
     </main>
 
@@ -110,8 +109,6 @@
 
     <aside id="cart-sidebar"
         class="carrinho-sidebar fixed top-0 right-0 w-full max-w-xs md:max-w-sm z-50 shadow-2xl transform translate-x-full 
-        
-        /* CLASSES CRUCIAIS DE FLEXBOX: h-full, flex, flex-col */
         h-full 
         flex 
         flex-col 
@@ -126,7 +123,7 @@
 
         <div id="cart-items-wrapper" class="px-6 py-4 flex-grow overflow-y-auto min-h-0">
             <div id="cart-items" class="space-y-4">
-                </div>
+            </div>
         </div>
 
         <div id="cart-footer-fixed" class="p-6 border-t-4 border-pink-300 flex-shrink-0">

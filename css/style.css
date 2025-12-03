@@ -173,21 +173,29 @@ main section {
 .moldura-foto {
     width: 100%;
     height: 250px;
-    background-color: var(--cor-principal);
+    /* 🌟 MUDANÇA PRINCIPAL: Fundo Branco ou Secundário */
+    background-color: white; 
+    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 0 0 8px var(--cor-secundaria), 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-bottom: 20px solid var(--cor-secundaria);
+    /* 🌟 Ajustado box-shadow para refletir a nova cor de fundo */
+    box-shadow: inset 0 0 0 8px white, 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 20px solid white;
 }
 
 .moldura-foto img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
+    object-fit: contain; 
+    
+    position: relative; 
+    top: auto; 
+    left: auto;
 }
 
 .cardapio-categoria:hover .overlay-doce {
@@ -425,6 +433,10 @@ main section {
 
     .moldura-foto {
         height: 180px;
+        /* Fundo branco em mobile também */
+        background-color: white; 
+        box-shadow: inset 0 0 0 8px white, 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-bottom: 20px solid white;
     }
 
     .carousel-item {
@@ -540,6 +552,7 @@ main section {
         right: 1.5rem;
         font-size: 1.5rem;
         padding: 0.7rem;
+        margin-top: 40px;
     }
 
     .card-imagem-cardapio {
@@ -605,5 +618,9 @@ main section {
 
     .moldura-foto {
         height: 200px;
+        /* Fundo branco em mobile também */
+        background-color: white; 
+        box-shadow: inset 0 0 0 8px white, 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-bottom: 20px solid white;
     }
 }

@@ -3,6 +3,7 @@ import { WHATSAPP_NUMBER } from "./number.js";
 let cart = [];
 
 const MASSAS = [
+    "Selecione",
     "Tradicional",
     "Brigadeiro",
     "Chocolate",
@@ -11,6 +12,7 @@ const MASSAS = [
 ];
 
 const RECHEIOS_BOLO = [
+    "Selecione",
     "Ninho",
     "Doce de leite",
     "Brigadeiro",
@@ -22,36 +24,43 @@ const RECHEIOS_BOLO = [
     "Ninho c/ morango"
 ];
 
-const GRID_CATEGORIES = ["1 Andar", "2 Andares", "Docinhos"];
+const CATEGORIES_ORDER = [
+    { id: 'bolos-1-andar', name: 'Bolos Decorados (1 Andar)', desc: 'Escolha a massa e dois recheios.' },
+    { id: 'bolos-2-andares', name: 'Bolos de Andares', desc: 'Perfeitos para grandes celebrações.' },
+    { id: 'docinhos-classicos', name: 'Docinhos Clássicos (Unidade)', desc: 'Brigadeiros, beijinhos e outras delícias.' },
+    { id: 'sobremesas-especiais', name: 'Sobremesas Especiais', desc: 'Taças, pudins, pavês e tortas geladas.' },
+    { id: 'tortas', name: 'Tortas Salgadas', desc: 'Opções deliciosas para complementar sua festa.' }
+];
+
 
 const products = [
-    { id: 101, name: "Bolo Decorado (10 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 100.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B10" },
-    { id: 102, name: "Bolo Decorado (15 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 120.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B15" },
-    { id: 103, name: "Bolo Decorado (20 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 150.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B20" },
-    { id: 104, name: "Bolo Decorado (25 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 180.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B25" },
-    { id: 105, name: "Bolo Decorado (30 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 210.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B30" },
-    { id: 106, name: "Bolo Decorado (40 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 240.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B40" },
-    { id: 107, name: "Bolo Decorado (50 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 270.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B50" },
-    { id: 108, name: "Bolo Decorado (60 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 310.00, category: "1 Andar", type: "bolo", image: "https://placehold.co/100x100/F8BBD0/E91E63?text=B60" },
-    { id: 201, name: "Bolo 2 Andares (40 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 280.00, category: "2 Andares", type: "bolo", image: "https://placehold.co/100x100/E91E63/F8BBD0?text=B40_2" },
-    { id: 202, name: "Bolo 2 Andares (50 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 380.00, category: "2 Andares", type: "bolo", image: "https://placehold.co/100x100/E91E63/F8BBD0?text=B50_2" },
-    { id: 203, name: "Bolo 2 Andares (70 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 480.00, category: "2 Andares", type: "bolo", image: "https://placehold.co/100x100/E91E63/F8BBD0?text=B70_2" },
-    { id: 204, name: "Bolo 2 Andares (100 fatias)", desc: "Massa e 2 Recheios a escolher.", price: 600.00, category: "2 Andares", type: "bolo", image: "https://placehold.co/100x100/E91E63/F8BBD0?text=B100_2" },
+    { id: 101, name: "Bolo (10 fatias)", desc: "Aprox. 1.2kg.", price: 100.00, category: "bolos-1-andar", type: "bolo", image: "images/10-fatias.jpeg" },
+    { id: 102, name: "Bolo (15 fatias)", desc: "Aprox. 1.8kg.", price: 120.00, category: "bolos-1-andar", type: "bolo", image: "images/15-fatias.jpeg" },
+    { id: 103, name: "Bolo (20 fatias)", desc: "Aprox. 2.4kg.", price: 150.00, category: "bolos-1-andar", type: "bolo", image: "images/20-fatias.jpeg" },
+    { id: 104, name: "Bolo (25 fatias)", desc: "Aprox. 3.0kg.", price: 180.00, category: "bolos-1-andar", type: "bolo", image: "images/25-fatias.jpeg" },
+    { id: 105, name: "Bolo (30 fatias)", desc: "Aprox. 3.6kg.", price: 210.00, category: "bolos-1-andar", type: "bolo", image: "images/30-fatias.png" },
+    { id: 106, name: "Bolo (40 fatias)", desc: "Aprox. 4.8kg.", price: 240.00, category: "bolos-1-andar", type: "bolo", image: "images/40-fatias.png" },
+    { id: 107, name: "Bolo (50 fatias)", desc: "Aprox. 6.0kg.", price: 270.00, category: "bolos-1-andar", type: "bolo", image: "images/50-fatias.png" },
+    { id: 108, name: "Bolo (60 fatias)", desc: "Aprox. 7.2kg.", price: 310.00, category: "bolos-1-andar", type: "bolo", image: "images/60-fatias.png" },
 
-    { id: 301, name: "Brigadeiro", desc: "Unidade", price: 3.00, category: "Docinhos", type: "doce", image: "https://placehold.co/100x100/E91E63/FFFFFF?text=BRIG" },
-    { id: 302, name: "Bem Casado", desc: "Unidade", price: 3.50, category: "Docinhos", type: "doce", image: "https://placehold.co/100x100/E91E63/FFFFFF?text=BC" },
-    { id: 303, name: "Surpresa de Uva", desc: "Unidade", price: 3.50, category: "Docinhos", type: "doce", image: "https://placehold.co/100x100/E91E63/FFFFFF?text=SUVA" },
-    { id: 304, name: "Trufa", desc: "Unidade", price: 4.00, category: "Docinhos", type: "doce", image: "https://placehold.co/100x100/E91E63/FFFFFF?text=TRUFA" },
-    
-    { id: 401, name: "Bolo Pote", desc: "Sabor a escolher.", price: 15.00, category: "Sobremesas", type: "sobremesa", image: "https://placehold.co/100x100/D81B60/FFFFFF?text=POTE" },
-    { id: 402, name: "Pavê", desc: "Grande", price: 70.00, category: "Sobremesas", type: "sobremesa", image: "https://placehold.co/100x100/D81B60/FFFFFF?text=PAVE" },
-    { id: 403, name: "Taça Doce", desc: "Individual", price: 20.00, category: "Sobremesas", type: "sobremesa", image: "https://placehold.co/100x100/D81B60/FFFFFF?text=TAÇA" },
-    { id: 404, name: "Mousse", desc: "Sabores variados.", price: 18.00, category: "Sobremesas", type: "sobremesa", image: "https://placehold.co/100x100/D81B60/FFFFFF?text=MOU" },
-    { id: 405, name: "Tortilete Doce", desc: "Unidade", price: 12.00, category: "Sobremesas", type: "sobremesa", image: "https://placehold.co/100x100/D81B60/FFFFFF?text=TORT" },
-    { id: 406, name: "Copo Felicidade", desc: "Sabor do dia.", price: 22.00, category: "Sobremesas", type: "sobremesa", image: "https://placehold.co/100x100/D81B60/FFFFFF?text=COPO" },
-    { id: 501, name: "Torta Salgada", desc: "A consultar.", price: 80.00, category: "Tortas", type: "sobremesa", image: "https://placehold.co/100x100/9C27B0/FFFFFF?text=TSAL" },
-    { id: 502, name: "Torta Doce", desc: "A consultar.", price: 75.00, category: "Tortas", type: "sobremesa", image: "https://placehold.co/100x100/9C27B0/FFFFFF?text=TDOC" },
+    { id: 201, name: "Bolo 2 Andares (40 fatias)", price: 280.00, desc: "Aprox. 4.8kg.", category: "bolos-2-andares", type: "bolo", image: "images/40-2-andares.jpeg" },
+    { id: 202, name: "Bolo 2 Andares (50 fatias)", price: 380.00, desc: "Aprox. 6.0kg.", category: "bolos-2-andares", type: "bolo", image: "images/50-2-andares.jpeg" },
+    { id: 203, name: "Bolo 2 Andares (70 fatias)", price: 480.00, desc: "Aprox. 8.4kg.", category: "bolos-2-andares", type: "bolo", image: "images/70-2-andares.png" },
+    { id: 204, name: "Bolo 2 Andares (100 fatias)", price: 600.00, desc: "Aprox. 12kg.", category: "bolos-2-andares", type: "bolo", image: "images/100-2-andares.png" },
+
+    { id: 301, name: "Brigadeiro Tradicional", desc: "Clássico! (Apenas venda em Kit de 10+)", price: 3.00, category: "docinhos-classicos", type: "doce", image: "images/brigadeiro.jpeg" },
+    { id: 302, name: "Beijinho de Coco", desc: "Coco fresco e irresistível. (Apenas venda em Kit de 10+)", price: 3.00, category: "docinhos-classicos", type: "doce", image: "images/image.png" },
+    { id: 303, name: "Pavê de Oreo", desc: "O favorito, na sua melhor versão. (Apenas venda em Kit de 10+)", price: 3.50, category: "docinhos-classicos", type: "doce", image: "images/oreo.jpeg" },
+    { id: 304, name: "Bem-casado", desc: "Doce delicado e tradicional.", price: 4.00, category: "docinhos-classicos", type: "doce", image: "images/bem-casado.jpeg" },
+
+    { id: 401, name: "Taça Doce", desc: "Sabor a consultar. Individual.", price: 20.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/ta.png" },
+    { id: 402, name: "Pavê", desc: "Muito bom.", price: 70.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pave.png" },
+    { id: 403, name: "Mini Vulcão", desc: "Bolo individual recheado.", price: 3.50, category: "sobremesas-especiais", type: "sobremesa", image: "images/vulcao.png" },
+    { id: 404, name: "Bolo no Pote", desc: "Sabores variados.", price: 15.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pote.png" },
+    { id: 405, name: "Pudin", desc: "Pudim de textura suave e aveludada, com o sabor inconfundível do caramelo.", price: 22.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/pudim.jpeg" },
+    { id: 406, name: "Mousses", desc: "Diversos sabores, individual.", price: 22.00, category: "sobremesas-especiais", type: "sobremesa", image: "images/Mousse.jpeg" },
 ];
+
 
 const toggleCart = () => {
     const sidebar = document.getElementById('cart-sidebar');
@@ -80,6 +89,7 @@ const checkCheckoutPossibility = () => {
     if (checkoutButton && nameInput) {
         const totalItemsInCart = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
         
+        // Desativa o botão se não houver itens OU se o nome estiver vazio
         checkoutButton.disabled = totalItemsInCart === 0 || nameInput.value.trim() === "";
     }
 };
@@ -90,6 +100,7 @@ const updateCart = (productId, change) => {
 
     if (product.type === 'bolo') {
         if (change === 1) {
+            // Bolos são tratados como itens únicos no carrinho devido às opções
             const newItem = { 
                 ...product, 
                 quantity: 1, 
@@ -100,12 +111,14 @@ const updateCart = (productId, change) => {
             };
             cart.push(newItem);
         } else if (change === -1) {
+            // Remove o último bolo adicionado com aquele ID
             const lastItemIndex = cart.map(item => item.id).lastIndexOf(productId);
             if (lastItemIndex > -1) {
                 cart.splice(lastItemIndex, 1);
             }
         }
     } else {
+        // Outros itens são agrupados por quantidade
         const existingItemIndex = cart.findIndex(item => item.id === productId && item.type !== 'bolo');
 
         if (change === 1) {
@@ -126,9 +139,26 @@ const updateCart = (productId, change) => {
     }
     
     renderCart();
-    renderGridProducts();
-    renderCarouselItems();
+    renderAllProducts();
 };
+
+// Função para remover item de bolo por uniqueId
+const removeItemFromCartByUniqueId = (uniqueIdToRemove) => {
+    cart = cart.filter(item => item.uniqueId !== uniqueIdToRemove);
+    renderCart();
+    renderAllProducts();
+}
+
+// Função para remover item agrupado por Id
+const removeItemFromCartById = (idToRemove) => {
+    const indexToRemove = cart.findIndex(item => item.id === idToRemove);
+    if (indexToRemove > -1) {
+        cart.splice(indexToRemove, 1);
+    }
+    renderCart();
+    renderAllProducts();
+}
+
 
 const updateItemOption = (uniqueId, type, value) => {
     const uniqueIdNumber = parseFloat(uniqueId);
@@ -191,7 +221,10 @@ const renderCart = () => {
                     </div>
                 `;
             } else {
-                optionsHtml = `<p class="text-gray-500 font-corpo text-base mt-2">Categoria: ${item.category}</p>`;
+                // Para Doces/Sobremesas agrupados
+                const categoryInfo = CATEGORIES_ORDER.find(c => c.id === item.category);
+                const categoryName = categoryInfo ? categoryInfo.name.replace(/\(.*\)/, '').trim() : item.category;
+                optionsHtml = `<p class="text-gray-500 font-corpo text-base mt-2">Categoria: ${categoryName}</p>`;
             }
 
             const identifierToRemove = item.type === 'bolo' ? item.uniqueId : item.id;
@@ -214,6 +247,7 @@ const renderCart = () => {
             cartItemsContainer.appendChild(itemDiv);
         });
         
+        // Adiciona event listeners para as opções dos bolos
         document.querySelectorAll('.cart-option-select').forEach(select => {
             select.addEventListener('change', (e) => {
                 const { uniqueId, type } = e.currentTarget.dataset;
@@ -221,26 +255,21 @@ const renderCart = () => {
             });
         });
         
+        // Adiciona event listeners para os botões de remoção
         document.querySelectorAll('.cart-remove-btn').forEach(button => {
             button.addEventListener('click', (e) => {
                 const identifier = e.currentTarget.dataset.identifier;
                 const type = e.currentTarget.dataset.type;
 
                 if (type === 'bolo') {
+                    // Remove item de bolo (por uniqueId)
                     const uniqueIdToRemove = parseFloat(identifier);
-                    cart = cart.filter(item => item.uniqueId !== uniqueIdToRemove);
+                    removeItemFromCartByUniqueId(uniqueIdToRemove);
                 } else {
+                    // Remove item agrupado (por Id)
                     const idToRemove = parseInt(identifier);
-                    // Para docinhos/outros, remove apenas o primeiro item que corresponda ao ID, e não todos.
-                    const indexToRemove = cart.findIndex(item => item.id === idToRemove);
-                    if (indexToRemove > -1) {
-                         cart.splice(indexToRemove, 1);
-                    }
+                    removeItemFromCartById(idToRemove);
                 }
-                
-                renderCart();
-                renderGridProducts();
-                renderCarouselItems();
             });
         });
     }
@@ -252,7 +281,6 @@ const renderCart = () => {
     cartTotalElement.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
     cartCountElement.textContent = totalItems > 99 ? '99+' : totalItems;
     
-    // CORREÇÃO: Remove a classe opacity-0 para o contador flutuante sempre ser visível.
     cartCountElement.classList.remove('opacity-0'); 
 
     checkCheckoutPossibility();
@@ -278,7 +306,10 @@ const generateWhatsAppMessage = (clientName) => {
             message += `*Massa:* ${item.massa || '❗ FALTA ESCOLHER'}\n`;
             message += `*Recheios:* ${item.recheio1 || '❗ FALTA ESCOLHER'} e ${item.recheio2 || '❗ FALTA ESCOLHER'}\n`;
         } else {
-             message += `*Tipo:* ${item.category}\n`;
+             // Tenta buscar o nome da categoria para melhor clareza no WhatsApp
+            const categoryInfo = CATEGORIES_ORDER.find(c => c.id === item.category);
+            const categoryName = categoryInfo ? categoryInfo.name.replace(/\(.*\)/, '').trim() : item.category;
+            message += `*Categoria:* ${categoryName}\n`;
         }
 
         message += `*Valor Total do Item:* R$ ${itemTotal.toFixed(2).replace('.', ',')}\n`;
@@ -318,94 +349,82 @@ const checkout = () => {
 };
 
 
-const renderGridProducts = () => {
-    const container = document.getElementById('product-cards-container');
-    if (!container) return;
+const renderAllProducts = () => {
+    const productsSection = document.getElementById('products-master-container');
+    if (!productsSection) return;
 
-    const gridProducts = products.filter(p => GRID_CATEGORIES.includes(p.category));
-    
-    const productCounts = cart.reduce((acc, item) => {
-        const key = item.id;
-        const qty = item.type === 'bolo' ? 1 : item.quantity;
-        acc[key] = (acc[key] || 0) + qty;
-        return acc;
-    }, {});
-    
-    container.innerHTML = gridProducts.map(product => {
-        const currentQty = productCounts[product.id] || 0;
-        
-        const minusButtonClass = currentQty > 0 
-            ? 'product-action-btn w-8 h-8 rounded-full bg-red-200 text-red-700 hover:bg-red-300 transition text-lg'
-            : 'w-8 h-8 rounded-full bg-gray-200 text-gray-400 cursor-not-allowed text-lg';
-            
-        const imageHtml = product.type.includes('bolo') 
-            ? `<span class="ml-2">Categoria: ${product.category}</span>`
-            : `<span class="ml-2">Toque para adicionar</span>`;
-            
-        return `
-            <div class="card-produto sombra-doce flex flex-col justify-between">
-                <div>
-                    <div class="moldura-foto mb-4 flex flex-col items-center justify-center font-corpo text-2xl text-white/70">
-                        <i class="fas fa-camera text-3xl mb-1"></i>
-                        ${imageHtml}
-                    </div>
-                    <h3 class="font-titulo text-4xl text-center text-gray-800 mb-1">${product.name}</h3>
-                    <p class="font-corpo text-center text-lg text-gray-600 mb-3">${product.desc}</p>
-                </div>
-                <div class="flex justify-between items-center mt-4 pt-4 border-t border-dashed border-pink-200">
-                    <span class="font-corpo text-3xl font-bold text-gray-800">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
-                    <div class="flex items-center space-x-2">
-                        <button class="${minusButtonClass}" data-product-id="${product.id}" data-action="remove" data-type="${product.type}" aria-label="Diminuir quantidade" ${currentQty === 0 ? 'disabled' : ''}>-</button>
-                        <span id="qty-${product.id}" class="font-corpo text-2xl font-bold w-6 text-center">${currentQty}</span>
-                        <button class="product-action-btn w-8 h-8 rounded-full bg-green-200 text-green-700 hover:bg-green-300 transition text-lg" data-product-id="${product.id}" data-action="add" data-type="${product.type}" aria-label="Aumentar quantidade">+</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    }).join('');
-};
-
-
-const renderCarouselItems = () => {
-    const container = document.getElementById('carousel-items-container');
-    if (!container) return;
-
-    const carouselProducts = products.filter(p => !GRID_CATEGORIES.includes(p.category));
+    productsSection.innerHTML = ''; 
 
     const productCounts = cart.reduce((acc, item) => {
         const key = item.id;
-        const qty = item.type !== 'bolo' ? item.quantity || 0 : 0; 
-        acc[key] = (acc[key] || 0) + qty;
+        // Bolos sempre contam 1 para o card do menu, doces usam a quantidade
+        const qty = item.type === 'bolo' ? 1 : item.quantity; 
+        
+        // Se for bolo, contamos a quantidade de itens únicos com aquele ID
+        if (item.type === 'bolo') {
+             acc[key] = (acc[key] || 0) + 1;
+        } else {
+             // Para doces, somamos a quantidade
+             acc[key] = (acc[key] || 0) + item.quantity;
+        }
+        
         return acc;
     }, {});
     
-    container.innerHTML = carouselProducts.map(product => {
-        const currentQty = productCounts[product.id] || 0;
-        
-        const minusButtonClass = currentQty > 0 
-            ? 'product-action-btn w-6 h-6 rounded-full bg-red-200 text-red-700 hover:bg-red-300 transition text-md'
-            : 'w-6 h-6 rounded-full bg-gray-200 text-gray-400 cursor-not-allowed text-md';
+    // Corrige a contagem para que doces/sobremesas mostrem o total correto
+    const uniqueItemCounts = cart.reduce((acc, item) => {
+        if (item.type === 'bolo') {
+            acc[item.id] = (acc[item.id] || 0) + 1; // Bolos são contados individualmente
+        } else {
+            // Doces e outros são agrupados
+            acc[item.id] = (acc[item.id] || 0) + item.quantity;
+        }
+        return acc;
+    }, {});
 
-        return `
-            <div class="carousel-item shadow-xl snap-start">
-                <div class="carousel-item-img-container">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
-                </div>
-                <div>
-                    <h3 class="font-titulo text-3xl text-gray-800">${product.name}</h3>
-                    <p class="font-corpo text-sm text-gray-600 mb-2">${product.desc}</p>
-                </div>
-                <div class="flex flex-col items-center mt-3 pt-2 border-t border-dashed border-pink-200 w-full">
-                    <span class="font-corpo text-3xl font-bold text-gray-800 mb-2">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
-                    <div class="flex items-center space-x-2">
-                        <button class="${minusButtonClass}" data-product-id="${product.id}" data-action="remove" data-type="${product.type}" aria-label="Diminuir quantidade" ${currentQty === 0 ? 'disabled' : ''}>-</button>
-                        <span id="qty-${product.id}" class="font-corpo text-xl font-bold w-5 text-center">${currentQty}</span>
-                        <button class="product-action-btn w-6 h-6 rounded-full bg-green-200 text-green-700 hover:bg-green-300 transition text-md" data-product-id="${product.id}" data-action="add" data-type="${product.type}" aria-label="Aumentar quantidade">+</button>
+
+    CATEGORIES_ORDER.forEach(categoryInfo => {
+        const categoryProducts = products.filter(p => p.category === categoryInfo.id);
+
+        if (categoryProducts.length > 0) {
+            const sectionHtml = `
+                <section id="${categoryInfo.id}" class="mb-16 pt-10">
+                    <h2 class="font-titulo text-6xl text-center text-gray-800 mb-4">${categoryInfo.name}</h2>
+                    <p class="font-corpo text-center text-xl max-w-3xl mx-auto mb-8 text-gray-700/80">${categoryInfo.desc}</p>
+                    <div class="product-cards-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        ${categoryProducts.map(product => {
+                            // Usa a contagem correta (uniqueItemCounts)
+                            const currentQty = uniqueItemCounts[product.id] || 0;
+                            const minusButtonClass = currentQty > 0 
+                                ? 'product-action-btn w-8 h-8 rounded-full bg-red-200 text-red-700 hover:bg-red-300 transition text-lg'
+                                : 'w-8 h-8 rounded-full bg-gray-200 text-gray-400 cursor-not-allowed text-lg';
+                                
+                            return `
+                                <div class="card-produto sombra-doce flex flex-col justify-between">
+                                    <div>
+                                        <div class="moldura-foto mb-4 h-64 flex justify-center items-center p-2"> 
+                                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain rounded-2xl">
+                                        </div>
+                                        <h3 class="font-titulo text-4xl text-center text-gray-800 mb-1">${product.name}</h3>
+                                        <p class="font-corpo text-center text-lg text-gray-600 mb-3">${product.desc}</p>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-dashed border-pink-200">
+                                        <span class="font-corpo text-3xl font-bold text-gray-800">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                                        <div class="flex items-center space-x-2">
+                                            <button class="${minusButtonClass}" data-product-id="${product.id}" data-action="remove" data-type="${product.type}" aria-label="Diminuir quantidade" ${currentQty === 0 ? 'disabled' : ''}>-</button>
+                                            <span id="qty-${product.id}" class="font-corpo text-2xl font-bold w-6 text-center">${currentQty}</span>
+                                            <button class="product-action-btn w-8 h-8 rounded-full bg-green-200 text-green-700 hover:bg-green-300 transition text-lg" data-product-id="${product.id}" data-action="add" data-type="${product.type}" aria-label="Aumentar quantidade">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
                     </div>
-                </div>
-            </div>
-        `;
-    }).join('');
+                </section>
+            `;
+            productsSection.insertAdjacentHTML('beforeend', sectionHtml);
+        }
+    });
 };
 
 const setupProductListeners = () => {
@@ -429,26 +448,92 @@ const setupProductListeners = () => {
     });
 }
 
-const setupCarousel = () => {
-    const container = document.getElementById('carousel-items-container');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
+/**
+ * 🛠️ FUNÇÃO CORRIGIDA: Implementa a rolagem suave com offset E o destaque dinâmico do botão.
+ */
+const setupSmoothScrolling = () => {
+    const menuFiltros = document.getElementById('menu-filtros-fixo');
+    const todosOsBotoes = document.querySelectorAll('.btn-filtro-menu');
+    
+    // Define os estilos de destaque para facilitar a gestão via JS
+    const activeBgColor = 'var(--cor-acento)';
+    const activeTextColor = 'white';
+    const inactiveBgColor = 'transparent'; 
+    const inactiveTextColor = 'rgb(55, 65, 81)'; // text-gray-700
 
-    if (container) {
-        const scrollAmount = Math.max(250, container.clientWidth / 2);
+    /**
+     * Aplica o destaque no link clicado e remove dos outros.
+     * @param {Element} clickedLink O elemento <a> que foi clicado.
+     */
+    const highlightButton = (clickedLink) => {
+        todosOsBotoes.forEach(btn => {
+            // Remove o destaque de todos
+            btn.style.backgroundColor = inactiveBgColor;
+            btn.style.color = inactiveTextColor;
+            btn.classList.remove('font-bold');
+            btn.classList.add('font-medium');
+            btn.classList.remove('shadow-lg');
+            btn.classList.add('hover:bg-pink-100'); // Garante o hover de volta
+        });
 
-        if (prevButton) {
-            prevButton.addEventListener('click', () => {
-                container.scrollLeft -= scrollAmount;
-            });
-        }
-        if (nextButton) {
-            nextButton.addEventListener('click', () => {
-                container.scrollLeft += scrollAmount;
-            });
-        }
+        // Aplica o destaque ao botão clicado
+        clickedLink.style.backgroundColor = activeBgColor;
+        clickedLink.style.color = activeTextColor;
+        clickedLink.classList.remove('font-medium');
+        clickedLink.classList.add('font-bold');
+        clickedLink.classList.add('shadow-lg'); // Adiciona uma sombra para enfatizar
+        clickedLink.classList.remove('hover:bg-pink-100');
     }
-}
+
+    // 1. Garante que o primeiro botão esteja ativo ao carregar a página
+    // Isso deve ser compatível com a cor inicial definida no seu HTML.
+    if (todosOsBotoes.length > 0 && todosOsBotoes[0].getAttribute('href') === '#bolos-1-andar') {
+        // Se o primeiro link tiver o estilo inicial no HTML, precisamos apenas garantir que os outros não tenham.
+        // Já que você definiu o estilo inline no primeiro link do HTML, garantimos que os outros sigam o padrão:
+        todosOsBotoes.forEach((btn, index) => {
+             if (index > 0) {
+                btn.style.backgroundColor = inactiveBgColor;
+                btn.style.color = inactiveTextColor;
+             }
+        });
+        // Remove a chamada highlightButton(todosOsBotoes[0]) para não conflitar com o estilo inline do HTML
+    }
+    
+    // Delega o evento de clique para o contêiner do menu
+    menuFiltros?.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        // 1. Previne o comportamento padrão (pular imediatamente)
+        e.preventDefault();
+
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            // 2. ADICIONA O DESTAQUE
+            highlightButton(link);
+
+            // 3. Calcula o offset. Altura da barra de menu fixo.
+            const offset = menuFiltros.offsetHeight || 0; 
+
+            // 4. Calcula a posição alvo corrigida
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = targetElement.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset - 10; // -10px de margem extra
+
+            // 5. Rola suavemente
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Opcional: Atualiza a URL sem o pulo imediato
+            history.pushState(null, '', targetId);
+        }
+    });
+};
 
 
 const setupEventListeners = () => {
@@ -461,14 +546,13 @@ const setupEventListeners = () => {
     });
     document.getElementById('client-name-input')?.addEventListener('input', checkCheckoutPossibility);
     
-    setupProductListeners(); 
+    setupProductListeners();
+    setupSmoothScrolling();
 }
 
 window.addEventListener("DOMContentLoaded", () => {
     setupEventListeners();
-    renderGridProducts();
-    renderCarouselItems();
-    setupCarousel();
+    renderAllProducts();
     renderCart();
 });
 
